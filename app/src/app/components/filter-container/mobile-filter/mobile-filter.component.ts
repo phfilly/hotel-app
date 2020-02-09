@@ -6,17 +6,31 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./mobile-filter.component.scss"]
 })
 export class MobileFilterComponent implements OnInit {
+  selected = [];
+
   @Input() name: string;
 
   @Input() filterRange: [];
 
-  @Output() selection = new EventEmitter();
+  @Output() selections = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   select(value: string) {
-    this.selection.emit(value);
+    const index = this.selected.indexOf(value);
+
+    if (index === -1) {
+      this.selected.push(value);
+    } else if (index) {
+      this.selected.splice(index, 1);
+    }
+
+    this.selections.emit(this.selected);
+  }
+
+  isSelected(value: string): boolean {
+    return this.selected.includes(value) ? true : false;
   }
 }

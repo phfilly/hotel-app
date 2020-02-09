@@ -1,4 +1,4 @@
-@import '../../../styles.scss';
+@import '../../../../styles.scss';
 
 :host {
     padding: 10px 0px;
@@ -24,10 +24,9 @@
         font-size: 12px;
         height: 20px;
         text-align: center;
-
-        &:hover {
-            background-color: $dark-grey;
-            color: #fff;
-        }
+    }
+    
+    .selected {
+        background-color: $light-grey;
     }
 }

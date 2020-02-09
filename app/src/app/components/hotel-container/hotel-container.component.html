@@ -13,7 +13,7 @@
         <ng-template #MobileListings>
             <mat-drawer-container autosize>
                 <mat-drawer #drawer mode="side" class="side-menu">
-                  <filter-container [isMobile]="isMobile"></filter-container>
+                  <filter-container [isMobile]="isMobile" (closeMenu)="drawer.toggle()"></filter-container>
                 </mat-drawer>
               
                 <div class="mobile-filter-container">

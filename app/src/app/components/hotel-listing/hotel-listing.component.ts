@@ -7,11 +7,25 @@ import { Hotels } from "src/app/models/hotels";
   styleUrls: ["./hotel-listing.component.scss"]
 })
 export class HotelListingComponent implements OnInit {
+  rating = {};
+
   @Input() hotel: Hotels;
 
   @Input() isMobile: boolean;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.printRatingText();
+  }
+
+  printRatingText() {
+    if (this.hotel.rating < 5) {
+      this.rating = { text: "Oof not good", class: "red" };
+    } else if (this.hotel.rating > 5 && this.hotel.rating < 8) {
+      this.rating = { text: "Very Good", class: "average" };
+    } else if (this.hotel.rating > 8) {
+      this.rating = { text: "Amazing", class: "great" };
+    }
+  }
 }

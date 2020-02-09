@@ -10,11 +10,10 @@ import { HotelContainerComponent } from "./components/hotel-container/hotel-cont
 import { HotelListingComponent } from "./components/hotel-listing/hotel-listing.component";
 import { MatSliderModule } from "@angular/material/slider";
 import { MatIconModule } from "@angular/material/icon";
-import { FilterComponent } from "./components/filter/filter.component";
+import { FilterComponent } from "./components/filter-container/filter/filter.component";
 import { MatSelectModule } from "@angular/material/select";
 import { MatSidenavModule } from "@angular/material/sidenav";
-import { SideNavigationComponent } from "./components/side-navigation/side-navigation.component";
-import { MobileFilterComponent } from './components/mobile-filter/mobile-filter.component';
+import { MobileFilterComponent } from "./components/filter-container/mobile-filter/mobile-filter.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { MobileFilterComponent } from './components/mobile-filter/mobile-filter.
     HotelContainerComponent,
     HotelListingComponent,
     FilterComponent,
-    SideNavigationComponent,
     MobileFilterComponent
   ],
   imports: [

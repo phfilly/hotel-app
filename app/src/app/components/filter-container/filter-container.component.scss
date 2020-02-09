@@ -12,11 +12,44 @@
     }
 }
 
+.back-banner {
+    background-color: $primary-blue;
+    
+    .filter-by {
+        background: none;
+        color: #fff;
+        border: none;
+        padding: 10px 5px;
+        align-items: center;
+        display: flex;
+
+        mat-icon {
+            padding-right: 6px;
+        }
+    }
+}
+
 .sort-by-filter {
     display: flex;
     flex-direction: row;
     justify-content: left;
     align-items: center;
+
+    ::ng-deep .mat-form-field-flex {
+        background-color: #fff;
+        position: relative;
+        top: 8px;
+        padding: 4px;
+        border-radius: 5px;
+    }
+
+    ::ng-deep .mat-form-field-underline {
+        height: 0px;
+    }
+
+    ::ng-deep .mat-form-field-infix {
+        border: none;
+    }
 
     div {
         padding: 0px 8px;

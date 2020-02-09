@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { Webfilter } from "../shared/filters";
 
 @Component({
   selector: "app-filter",
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./filter.component.scss"]
 })
 export class FilterComponent implements OnInit {
-  @Input() filter;
+  @Input() filter: Webfilter;
 
   constructor() {}
 
