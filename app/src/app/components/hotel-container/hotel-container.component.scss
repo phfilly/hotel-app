@@ -1,9 +1,39 @@
+@import '../../../styles.scss';
+
 .hotel-container {
     width: 100%;
-    background-color: #F0F0F0;
+    background-color: $light-grey;
 }
 
 .hotel-row {
     max-width: 1296px;
-    margin: 20px auto;
+    margin: 25px auto;
+}
+
+.side-menu {
+    width: 250px;
+}
+
+.mobile-filter-container {
+    padding: 10px;
+
+    .filter-by {
+        color: $primary-blue;
+        border-radius: 6px;
+        padding: 8px;
+        box-shadow: rgb(191, 218, 249) 0px 0px 0px 1px inset;
+        background-color: rgb(247, 251, 255);
+        border-width: 0px;
+        font-weight: bold;
+
+        mat-icon {
+            font-size: 16px;
+            position: relative;
+            top: 4px;
+        }
+
+        &:hover {
+            background-color: rgb(230, 240, 253);
+        }
+    }
 }

@@ -1,16 +1,31 @@
-<div class="filter-container">
-    <div *ngFor="let filter of filters">
-        <app-filter [filter]=filter></app-filter>
+<div *ngIf="!isMobile; else showMobileFilters">
+    <div class="filter-container">
+        <div *ngFor="let filter of filters">
+            <app-filter [filter]=filter></app-filter>
+        </div>
+    </div>
+    
+    <div class="sort-by-filter">
+        <div>Sort by </div>
+        <div>
+            <mat-form-field>
+                <mat-select>
+                    <mat-option *ngFor="let sort of sortBy" [value]="sort.value">
+                        {{ sort.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            2380 hotels,
+            <a href="" class="upsell-deals">56 with great deals</a>
+        </div>
     </div>
 </div>
 
-<div class="filter-container">
-    <mat-form-field>
-        <mat-label>Sort by</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let sort of sortBy" [value]="sort.value">
-                {{ sort.name }}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-</div>
+
+<ng-template #showMobileFilters>
+    <div *ngFor="let filter of mobileFilters">
+        <mobile-filter [name]="filter.name" [filterRange]="filter.values"></mobile-filter>
+    </div>
+</ng-template>

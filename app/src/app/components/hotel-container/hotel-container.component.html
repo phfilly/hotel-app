@@ -1,11 +1,32 @@
 <div class="hotel-container">
     <div *ngIf="isLoading; else showHotels" class="hotel-row">Loading...</div>
     <ng-template #showHotels>
-        <div class="hotel-row">
-            <filter-container></filter-container>
+        <div *ngIf="!isMobile; else MobileListings">
+            <div class="hotel-row">
+                <filter-container [isMobile]="isMobile"></filter-container>
+            </div>
+            <div *ngFor="let hotel of hotels" class="hotel-row">
+                <hotel-listing [hotel]="hotel" [isMobile]="isMobile"></hotel-listing>
+            </div>
         </div>
-        <div *ngFor="let hotel of hotels" class="hotel-row">
-            <hotel-listing [hotel]="hotel"></hotel-listing>
-        </div>
+
+        <ng-template #MobileListings>
+            <mat-drawer-container autosize>
+                <mat-drawer #drawer mode="side" class="side-menu">
+                  <filter-container [isMobile]="isMobile"></filter-container>
+                </mat-drawer>
+              
+                <div class="mobile-filter-container">
+                    <button type="button" mat-icon-button (click)="drawer.toggle()" class="filter-by">
+                        <mat-icon>tune</mat-icon> Filter By
+                    </button>
+
+                    <div *ngFor="let hotel of hotels" class="hotel-row">
+                        <hotel-listing [hotel]="hotel" [isMobile]="isMobile"></hotel-listing>
+                    </div>
+                </div>
+              
+            </mat-drawer-container>
+        </ng-template>
     </ng-template>
 </div>

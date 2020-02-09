@@ -1,0 +1,8 @@
+<div>
+    <h4 class="filter-title">{{ name }}</h4>
+    <div class="container">
+        <div *ngFor="let block of filterRange" class="block-container">
+            <div class="block" [innerHTML]="block" (click)="select(block)"></div>
+        </div>
+    </div>
+</div>

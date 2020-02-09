@@ -12,6 +12,9 @@ import { MatSliderModule } from "@angular/material/slider";
 import { MatIconModule } from "@angular/material/icon";
 import { FilterComponent } from "./components/filter/filter.component";
 import { MatSelectModule } from "@angular/material/select";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { SideNavigationComponent } from "./components/side-navigation/side-navigation.component";
+import { MobileFilterComponent } from './components/mobile-filter/mobile-filter.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { MatSelectModule } from "@angular/material/select";
     FilterContainerComponent,
     HotelContainerComponent,
     HotelListingComponent,
-    FilterComponent
+    FilterComponent,
+    SideNavigationComponent,
+    MobileFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,8 @@ import { MatSelectModule } from "@angular/material/select";
     BrowserAnimationsModule,
     MatSliderModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

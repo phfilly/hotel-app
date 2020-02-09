@@ -1,19 +1,17 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Hotels } from 'src/app/models/hotels';
+import { Component, OnInit, Input } from "@angular/core";
+import { Hotels } from "src/app/models/hotels";
 
 @Component({
-  selector: 'hotel-listing',
-  templateUrl: './hotel-listing.component.html',
-  styleUrls: ['./hotel-listing.component.scss']
+  selector: "hotel-listing",
+  templateUrl: "./hotel-listing.component.html",
+  styleUrls: ["./hotel-listing.component.scss"]
 })
 export class HotelListingComponent implements OnInit {
-
   @Input() hotel: Hotels;
 
-  constructor() { }
+  @Input() isMobile: boolean;
 
-  ngOnInit(): void {
-    console.log(this.hotel);
-  }
+  constructor() {}
 
+  ngOnInit(): void {}
 }

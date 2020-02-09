@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
   selector: "filter-container",
@@ -27,9 +27,24 @@ export class FilterContainerComponent implements OnInit {
   sortBy = [
     {
       name: "Best supplier & price",
-      value: "supplier_and_price"
+      value: "SUPPLIER_AND_PRICE"
     }
   ];
+
+  mobileFilters = [
+    {
+      name: "Guest Rating",
+      key: "GUEST_RATING",
+      values: ["Any", "6+", "7+", "8+", "9+"]
+    },
+    {
+      name: "Star Rating",
+      key: "STAR_RATING",
+      values: ["Any", "2&#9733;", "3&#9733;", "4&#9733;", "5&#9733;"]
+    }
+  ];
+
+  @Input() isMobile: boolean;
 
   constructor() {}
 

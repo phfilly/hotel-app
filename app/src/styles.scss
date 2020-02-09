@@ -4,6 +4,9 @@ html, body { height: 100%; background-color: #F0F0F0 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 $primary-blue: #0077FF;
+$dark-grey: #8c8c8c;
+$light-grey: #F0F0F0;
+$primary-orange: #FF4605;
 
 .chevron::before {
 	border-style: solid;

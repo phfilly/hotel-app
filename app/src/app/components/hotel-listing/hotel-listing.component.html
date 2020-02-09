@@ -1,19 +1,38 @@
-<div class="hotel-listing">
-    <div class="hotel-image" [ngStyle]="{'background-image': 'url(' + hotel.image + ')'}"></div>
+<div class="hotel-listing" [ngClass]="{ 'mobile-hotel-listing': isMobile }">
+    <div class="hotel-image" [ngStyle]="{'background-image': 'url(' + hotel.image + ')'}">
+        <span class="great-offer-ribbon" *ngIf="hotel.isSpecial">GREAT OFFER</span>
+        <button mat-icon-button class="favourite">
+            <mat-icon>favorite_border</mat-icon>
+        </button>
+    </div>
     <div class="hotel-details">
         <div>
             <h2>{{ hotel.name }}</h2>
-            <div>{{ hotel.starRating }}</div>
-            <div>{{ hotel.location }} {{ hotel.city }}</div>
+            <div class="star-container">
+                <div *ngFor="let star of [0,1,2,3,4]; let i = index">
+                    <mat-icon class="star" [ngClass]="{ 'outline': hotel.starRating > i }">star_border</mat-icon>
+                </div>
+            </div>
+            <div class="location">
+                <mat-icon>near_me</mat-icon> {{ hotel.location }} {{ hotel.city }}
+            </div>
+            <div class="sentiment">
+                <mat-icon>insert_emoticon</mat-icon> {{ hotel.rating }}
+            </div>
+            <div class="perk-container">
+                <div *ngFor="let perk of hotel.perks" class="perk">
+                    {{ perk }}
+                </div>
+            </div>
         </div>
     </div>
-    <div class="pricing-block">
-        <div class="special-price" *ngIf="hotel.pricing.specialPrice > 0">{{ hotel.pricing.specialPrice }}</div>
-        <div class="main-price">€{{ hotel.pricing.price }}</div>
+    <div class="pricing-block" [ngClass]="{ 'web-pricing-block': !isMobile }">
+        <div class="special-price" *ngIf="hotel.pricing.specialPrice > 0">€{{ hotel.pricing.specialPrice }}</div>
+        <div class="main-price">€<span>{{ hotel.pricing.price }}</span></div>
         <div class="cancellation-policy" *ngIf="hotel.canCancel">Free cancellation</div>
 
         <div class="best-price">
-            <a href="" class="best-price-btn">{{ hotel.vendors[0].vendor }} <span>&#8594;</span></a>
+            <a href="{{ hotel.vendors[0].link }}" class="best-price-btn" target="_blank">{{ hotel.vendors[0].vendor }} <span>&#8594;</span></a>
         </div>
 
         <div *ngFor="let vendor of hotel.vendors">
@@ -23,7 +42,7 @@
             </div>
         </div>
         <div class="show-details">
-            Show details <span class="chevron bottom"></span>
+            <a href="">Show details <span class="chevron bottom"></span></a>
         </div>
     </div>
 </div>

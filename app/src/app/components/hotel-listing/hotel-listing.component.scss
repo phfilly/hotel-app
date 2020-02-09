@@ -7,20 +7,119 @@
     background-color: #fff;
 }
 
+div.hotel-listing.mobile-hotel-listing {
+    flex-flow: wrap;
+}
+
 .hotel-image {
     position: relative;
     width: 100%;
     background-size: cover;
     height: 100%;
     background-repeat: no-repeat;
-    max-width: 300px;
     max-height: 300px;
     height: 300px;
+    max-width: 380px;
+
+    .great-offer-ribbon {
+        background-color: $primary-orange;
+        padding: 4px;
+        width: 150px;
+        height: 22px;
+        line-height: 26px;
+        padding-left: 15px;
+        position: absolute;
+        left: -8px;
+        top: 20px;
+        color: #fff;
+
+        &::before {
+            height: 0;
+            width: 0;
+            top: -8.5px;
+            left: 0.1px;
+            border-bottom: 9px solid black;
+            border-left: 9px solid transparent;
+        }
+
+        &::after {
+            height: 0;
+            width: 0;
+            right: -14.5px;
+            border-top: 25px solid transparent;
+            border-bottom: 25px solid transparent;
+            border-left: 15px solid $primary-orange;
+        }
+    }
+
+    .favourite {
+        color: #fff;
+        float: right;
+        background: none;
+        border: none;
+        padding: 5px;
+        margin-right: 12px;
+
+        mat-icon {
+            font-size: 38px;
+        }
+    }
 }
 
 .hotel-details {
     width: 100%;
     padding: 20px;
+
+    .location {
+        color: $primary-blue;
+        padding: 10px 0px;
+
+        mat-icon {
+            position: relative;
+            top: 5px;
+        }
+    }
+
+    .sentiment {
+        padding: 10px 0px;
+
+        mat-icon {
+            position: relative;
+            top: 5px;
+        }
+    }
+
+    .star-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 120px;
+
+        .star {
+            color: $light-grey;
+        }
+
+        .outline {
+            color: $primary-orange;
+        }
+    }
+
+    .perk-container {
+        display: flex;
+        justify-content: left;
+
+        
+        .perk {
+            background-color: $light-grey;
+            margin: 2px;
+            border-radius: 15px;
+            padding: 5px 10px;
+        }
+    }
+}
+
+.web-pricing-block {
+    border-left: 2px solid #F0F0F0;
+    max-width: 250px;
 }
 
 .pricing-block {
@@ -28,25 +127,28 @@
     width: 100%;
     align-self: center;
     padding: 15px;
-    max-width: 250px;
-    border-left: 2px solid #F0F0F0;
+    min-width: 250px;
+    margin: auto;
 
     .special-price {
-        color: orange;
+        color: $primary-orange;
         text-decoration: line-through;
         font-size: 18px;
     }
     
     .cancellation-policy {
         color: green;
-        font-size: 18px;
-        padding: 10px 0px;
+        font-size: 14px;
+        padding: 0px;
     }
     
     .main-price {
         font-size: 36px;
-        font-weight: bold;
         padding: 20px 0px;
+
+        span {
+            font-weight: bold;
+        }
     }
 
     .best-price {
@@ -54,7 +156,7 @@
     }
 
     .best-price-btn {
-        background-color: orange;
+        background-color: $primary-orange;
         padding: 10px 2px;
         border-radius: 25px;
         color: #fff;
@@ -90,6 +192,10 @@
         font-weight: bold;
         font-size: 14px;
         padding: 10px 0px;
+
+        a {
+            text-decoration: none;
+        }
     }
 }
 

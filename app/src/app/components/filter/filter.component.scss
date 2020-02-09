@@ -1,7 +1,9 @@
+@import '../../../styles.scss';
+
 mat-icon {
     top: 6px;
     position: relative;
-    color: #8c8c8c;
+    color: $dark-grey;
 }
 
 .mat-slider-horizontal {

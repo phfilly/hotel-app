@@ -1,3 +1,5 @@
+@import '../../../styles.scss';
+
 .filter-container {
     display: flex;
     flex-direction: row;
@@ -7,5 +9,24 @@
     div {
         width: 100%;
         margin: 0px 10px;
+    }
+}
+
+.sort-by-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+
+    div {
+        padding: 0px 8px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .upsell-deals {
+        color: $primary-blue;
+        text-decoration: none;
+        border-bottom: 1px dotted;
     }
 }
