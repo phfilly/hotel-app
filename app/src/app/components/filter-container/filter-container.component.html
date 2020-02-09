@@ -1,0 +1,16 @@
+<div class="filter-container">
+    <div *ngFor="let filter of filters">
+        <app-filter [filter]=filter></app-filter>
+    </div>
+</div>
+
+<div class="filter-container">
+    <mat-form-field>
+        <mat-label>Sort by</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let sort of sortBy" [value]="sort.value">
+                {{ sort.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

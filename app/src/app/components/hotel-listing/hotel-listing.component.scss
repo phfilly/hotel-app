@@ -1,0 +1,95 @@
+@import '../../../styles.scss';
+
+.hotel-listing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.hotel-image {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    height: 100%;
+    background-repeat: no-repeat;
+    max-width: 300px;
+    max-height: 300px;
+    height: 300px;
+}
+
+.hotel-details {
+    width: 100%;
+    padding: 20px;
+}
+
+.pricing-block {
+    text-align: center;
+    width: 100%;
+    align-self: center;
+    padding: 15px;
+    max-width: 250px;
+    border-left: 2px solid #F0F0F0;
+
+    .special-price {
+        color: orange;
+        text-decoration: line-through;
+        font-size: 18px;
+    }
+    
+    .cancellation-policy {
+        color: green;
+        font-size: 18px;
+        padding: 10px 0px;
+    }
+    
+    .main-price {
+        font-size: 36px;
+        font-weight: bold;
+        padding: 20px 0px;
+    }
+
+    .best-price {
+        padding: 10px 0px;
+    }
+
+    .best-price-btn {
+        background-color: orange;
+        padding: 10px 2px;
+        border-radius: 25px;
+        color: #fff;
+        text-decoration: none;
+        text-transform: capitalize;
+        width: 100%;
+        display: block;
+        opacity: 1.0;
+
+        span {
+            font-size: 20px;
+            padding: 0px 5px;
+            color: #fff;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .vendor-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2px 0px;
+
+        div {
+            font-size: 14px;
+        }
+    }
+
+    .show-details {
+        font-weight: bold;
+        font-size: 14px;
+        padding: 10px 0px;
+    }
+}
+

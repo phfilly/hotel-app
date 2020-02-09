@@ -1,0 +1,11 @@
+<div class="hotel-container">
+    <div *ngIf="isLoading; else showHotels" class="hotel-row">Loading...</div>
+    <ng-template #showHotels>
+        <div class="hotel-row">
+            <filter-container></filter-container>
+        </div>
+        <div *ngFor="let hotel of hotels" class="hotel-row">
+            <hotel-listing [hotel]="hotel"></hotel-listing>
+        </div>
+    </ng-template>
+</div>
