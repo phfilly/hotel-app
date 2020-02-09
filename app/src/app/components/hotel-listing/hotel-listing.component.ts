@@ -7,7 +7,7 @@ import { Hotels } from "src/app/models/hotels";
   styleUrls: ["./hotel-listing.component.scss"]
 })
 export class HotelListingComponent implements OnInit {
-  rating = {};
+  public rating = { text: "", class: "" };
 
   @Input() hotel: Hotels;
 
