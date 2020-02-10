@@ -1,47 +1,72 @@
-export interface Webfilter {
+export interface SlideFilter {
   name: string;
   unit: string;
   icon: string;
+  key: string;
+  min: number;
+  max: number;
+  step: number;
 }
 
-export const webFilters: Webfilter[] = [
+export const slide_filters: SlideFilter[] = [
   {
     name: "Max Price",
     unit: "€",
-    icon: "euro_symbol"
+    icon: "euro_symbol",
+    key: "CURRENCY",
+    min: 100,
+    step: 50,
+    max: 2000
   },
   {
     name: "Min Rating",
     unit: "",
-    icon: "insert_emoticon"
+    icon: "insert_emoticon",
+    key: "RATING",
+    min: 1,
+    step: 1,
+    max: 10
   },
   {
     name: "Distance from city center",
     unit: "km",
-    icon: "near_me"
+    icon: "near_me",
+    key: "DISTANCE",
+    min: 1,
+    step: 10,
+    max: 500
   }
 ];
 
-export const sortBy = [
+export interface Filter {
+  name: string;
+  key: string;
+  values?: string[];
+  symbol?: string;
+}
+
+export const sortBy: Filter[] = [
   {
     name: "Best supplier & price",
-    value: "SUPPLIER_AND_PRICE"
+    key: "SUPPLIER_AND_PRICE"
   },
   {
     name: "Best location",
-    value: "LOCATION"
+    key: "LOCATION"
   }
 ];
 
-export const mobileFilters = [
+export const block_filters: Filter[] = [
   {
     name: "Guest Rating",
     key: "GUEST_RATING",
-    values: ["Any", "6+", "7+", "8+", "9+"]
+    values: ["Any", "6", "7", "8", "9"],
+    symbol: "+"
   },
   {
     name: "Star Rating",
     key: "STAR_RATING",
-    values: ["Any", "2&#9733;", "3&#9733;", "4&#9733;", "5&#9733;"]
+    values: ["Any", "2", "3", "4", "5"],
+    symbol: "&#9733;"
   }
 ];

@@ -1,4 +1,4 @@
-@import '../../../styles.scss';
+@import '../../../../styles.scss';
 
 .hotel-listing {
     display: flex;
@@ -81,6 +81,10 @@ div.hotel-listing.mobile-hotel-listing {
 .hotel-details {
     width: 100%;
     padding: 20px;
+
+    h2 {
+        margin-bottom: 0;
+    }
 
     .location {
         color: $primary-blue;

@@ -19,7 +19,7 @@ export class HotelListingComponent implements OnInit {
     this.printRatingText();
   }
 
-  printRatingText() {
+  printRatingText(): void {
     if (this.hotel.rating < 5) {
       this.rating = { text: "Oof not good", class: "red" };
     } else if (this.hotel.rating > 5 && this.hotel.rating < 8) {

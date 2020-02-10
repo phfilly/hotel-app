@@ -6,14 +6,15 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { TopNavigationComponent } from "./components/top-navigation/top-navigation.component";
 import { FilterContainerComponent } from "./components/filter-container/filter-container.component";
-import { HotelContainerComponent } from "./components/hotel-container/hotel-container.component";
-import { HotelListingComponent } from "./components/hotel-listing/hotel-listing.component";
+import { HotelContainerComponent } from "./components/hotel/hotel-container/hotel-container.component";
+import { HotelListingComponent } from "./components/hotel/hotel-listing/hotel-listing.component";
 import { MatSliderModule } from "@angular/material/slider";
 import { MatIconModule } from "@angular/material/icon";
-import { FilterComponent } from "./components/filter-container/filter/filter.component";
+import { SlideFilterComponent } from "./components/filter-container/slide-filter/filter.component";
 import { MatSelectModule } from "@angular/material/select";
 import { MatSidenavModule } from "@angular/material/sidenav";
-import { MobileFilterComponent } from "./components/filter-container/mobile-filter/mobile-filter.component";
+import { BlockFilterComponent } from "./components/filter-container/block-filter/block-filter.component";
+import { HotelSideNavigationComponent } from "./components/hotel/side-nav/side-nav.component";
 
 @NgModule({
   declarations: [
@@ -22,8 +23,9 @@ import { MobileFilterComponent } from "./components/filter-container/mobile-filt
     FilterContainerComponent,
     HotelContainerComponent,
     HotelListingComponent,
-    FilterComponent,
-    MobileFilterComponent
+    HotelSideNavigationComponent,
+    SlideFilterComponent,
+    BlockFilterComponent
   ],
   imports: [
     BrowserModule,

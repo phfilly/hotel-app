@@ -1,7 +1,7 @@
 <div *ngIf="!isMobile; else showMobileFilters">
     <div class="filter-container">
-        <div *ngFor="let filter of WEB_FILTERS">
-            <app-filter [filter]=filter></app-filter>
+        <div *ngFor="let filter of SLIDE_FILTERS">
+            <slide-filter [filter]="filter" (selected)="selection($event)"></slide-filter>
         </div>
     </div>
     
@@ -9,8 +9,8 @@
         <div>Sort by </div>
         <div>
             <mat-form-field>
-                <mat-select>
-                    <mat-option *ngFor="let sort of SORT_BY" [value]="sort.value">
+                <mat-select (selectionChange)="selection($event)">
+                    <mat-option *ngFor="let sort of SORT_BY" [value]="sort.key">
                         {{ sort.name }}
                     </mat-option>
                 </mat-select>
@@ -30,7 +30,7 @@
             <mat-icon>arrow_back</mat-icon> Filter
         </button>
     </div>
-    <div *ngFor="let filter of MOBILE_FILTERS">
-        <mobile-filter [name]="filter.name" [filterRange]="filter.values"></mobile-filter>
+    <div *ngFor="let filter of BLOCK_FILTERS">
+        <block-filter [data]="filter" (selected)="selection($event)"></block-filter>
     </div>
 </ng-template>

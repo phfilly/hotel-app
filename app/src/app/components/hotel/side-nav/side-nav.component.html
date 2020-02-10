@@ -1,0 +1,16 @@
+<mat-drawer-container autosize>
+    <mat-drawer #drawer mode="side" class="side-menu">
+      <filter-container [isMobile]="isMobile" (closeMenu)="drawer.toggle()"></filter-container>
+    </mat-drawer>
+  
+    <div class="filter-container">
+        <button type="button" mat-icon-button (click)="drawer.toggle()" class="filter-by">
+            <mat-icon>tune</mat-icon> Filter By
+        </button>
+
+        <div *ngFor="let hotel of hotels" class="hotel-row">
+            <hotel-listing [hotel]="hotel" [isMobile]="isMobile"></hotel-listing>
+        </div>
+    </div>
+  
+</mat-drawer-container>

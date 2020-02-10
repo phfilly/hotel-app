@@ -1,0 +1,17 @@
+<div class="hotel-container">
+    <div *ngIf="isLoading; else showHotels" class="hotel-row">Loading...</div>
+    <ng-template #showHotels>
+        <div *ngIf="!isMobile; else MobileListings">
+            <div class="hotel-row">
+                <filter-container [isMobile]="isMobile"></filter-container>
+            </div>
+            <div *ngFor="let hotel of hotels" class="hotel-row">
+                <hotel-listing [hotel]="hotel" [isMobile]="isMobile"></hotel-listing>
+            </div>
+        </div>
+
+        <ng-template #MobileListings>
+            <hotel-side-nav [hotels]="hotels" [isMobile]="isMobile"></hotel-side-nav>
+        </ng-template>
+    </ng-template>
+</div>

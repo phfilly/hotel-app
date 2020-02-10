@@ -1,0 +1,8 @@
+<div>
+    <h4 class="filter-title">{{ data.name }}</h4>
+    <div class="container">
+        <div *ngFor="let block of data.values; let i = index" class="block-container">
+            <div class="block" [innerHTML]="printValue(i, block)" (click)="select(block)" [ngClass]="{ 'selected': isSelected(block) }"></div>
+        </div>
+    </div>
+</div>

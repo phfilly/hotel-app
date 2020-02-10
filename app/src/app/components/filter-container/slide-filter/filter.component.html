@@ -1,0 +1,11 @@
+<div class="slider">
+    <h4>
+        <mat-icon>{{ filter.icon }}</mat-icon> {{ filter.name }}
+    </h4>
+    <mat-slider thumbLabel
+        [min]="filter.min"
+        [max]="filter.max"
+        [step]="filter.step"
+        value="1.5"
+        (change)="updateValue($event)"></mat-slider>
+</div>

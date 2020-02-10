@@ -1,20 +1,11 @@
-@import '../../../styles.scss';
 
-.hotel-container {
-    width: 100%;
-    background-color: $light-grey;
-}
-
-.hotel-row {
-    max-width: 1296px;
-    margin: 25px auto;
-}
+@import '../../../../styles.scss';
 
 .side-menu {
     width: 100%;
 }
 
-.mobile-filter-container {
+.filter-container {
     padding: 10px;
 
     .filter-by {
@@ -24,6 +15,7 @@
         box-shadow: rgb(191, 218, 249) 0px 0px 0px 1px inset;
         background-color: rgb(247, 251, 255);
         border-width: 0px;
+        margin-bottom: 8px;
         font-weight: bold;
 
         mat-icon {

@@ -1,0 +1,11 @@
+@import '../../../../styles.scss';
+
+.hotel-container {
+    width: 100%;
+    background-color: $light-grey;
+}
+
+.hotel-row {
+    max-width: 1296px;
+    margin: 25px auto;
+}

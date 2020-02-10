@@ -1,0 +1,28 @@
+@import '../../../../styles.scss';
+
+.slider {
+    background-image: url('../../../../assets/pyramid.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 60%;
+    background-size: 85%;
+}
+
+mat-icon {
+    top: 6px;
+    position: relative;
+    color: $dark-grey;
+}
+
+h4 {
+    font-weight: 500;
+}
+
+.mat-slider-horizontal {
+    width: 100%;
+}
+
+::ng-deep .mat-slider-thumb {
+    background-color: #fff !important;
+    border: 3px solid $primary-blue !important;
+}

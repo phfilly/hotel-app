@@ -1,23 +1,37 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { sortBy, webFilters, mobileFilters } from "./shared/filters";
+import { sortBy, slide_filters, block_filters } from "./shared/filters";
+import { FilterService } from "./shared/filter.service";
+import { MatSliderChange } from "@angular/material/slider";
 
 @Component({
   selector: "filter-container",
   templateUrl: "./filter-container.component.html",
-  styleUrls: ["./filter-container.component.scss"]
+  styleUrls: ["./filter-container.component.scss"],
+  providers: [FilterService]
 })
 export class FilterContainerComponent implements OnInit {
   SORT_BY = sortBy;
-  WEB_FILTERS = webFilters;
-  MOBILE_FILTERS = mobileFilters;
+  SLIDE_FILTERS = slide_filters;
+  BLOCK_FILTERS = block_filters;
 
   @Input() isMobile: boolean;
 
   @Output() closeMenu = new EventEmitter();
 
-  constructor() {}
+  constructor(private filterService: FilterService) {}
 
   ngOnInit(): void {}
+
+  selection(event: Object) {
+    if (event["source"]) {
+      this.filterService.filterData({
+        key: event["value"],
+        value: event["value"]
+      });
+    } else {
+      this.filterService.filterData(event);
+    }
+  }
 
   back() {
     this.closeMenu.emit();
