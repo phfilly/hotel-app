@@ -1,4 +1,4 @@
-export interface MultiFilter {
+export interface SlideFilter {
   name: string;
   unit?: string;
   icon?: string;
@@ -25,7 +25,7 @@ export interface BlockSelect {
   symbol: string;
 }
 
-export const filters: MultiFilter[] = [
+export const filters: SlideFilter[] = [
   {
     name: "Max Price",
     unit: "€",
