@@ -1,0 +1,65 @@
+@import '../../../../styles.scss';
+
+h2 {
+    margin-bottom: 0;
+}
+
+.location {
+    color: $primary-blue;
+    padding: 10px 0px;
+
+    mat-icon {
+        position: relative;
+        top: 5px;
+    }
+}
+
+.sentiment {
+    padding-bottom: 15px;
+    font-weight: 500;
+    margin-top: -10px;
+
+    mat-icon {
+        position: relative;
+        top: 5px;
+    }
+
+    .bad {
+        color: red;
+    }
+
+    .average {
+        color: #dada00;
+    }
+
+    .great {
+        color: green;
+    }
+}
+
+.star-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 120px;
+
+    .star {
+        color: $light-grey;
+    }
+
+    .outline {
+        color: $primary-orange;
+    }
+}
+
+.perk-container {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    
+    .perk {
+        background-color: $light-grey;
+        margin: 2px;
+        border-radius: 15px;
+        padding: 5px 15px;
+    }
+}

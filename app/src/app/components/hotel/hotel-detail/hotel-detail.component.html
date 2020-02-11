@@ -1,0 +1,19 @@
+<div>
+    <h2>{{ hotel.name }}</h2>
+    <div class="star-container">
+        <div *ngFor="let star of [0,1,2,3,4]; let i = index">
+            <mat-icon class="star" [ngClass]="{ 'outline': hotel.starRating > i }">star_border</mat-icon>
+        </div>
+    </div>
+    <div class="location">
+        <mat-icon>near_me</mat-icon> {{ hotel.location }} &mdash; {{ hotel.city }}
+    </div>
+    <div class="sentiment">
+        <mat-icon class="{{ rating.class }}">insert_emoticon</mat-icon> {{ rating.text }} {{ hotel.rating }}
+    </div>
+    <div class="perk-container">
+        <div *ngFor="let perk of hotel.perks" class="perk">
+            {{ perk }}
+        </div>
+    </div>
+</div>

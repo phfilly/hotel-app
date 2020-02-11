@@ -30,7 +30,7 @@
             <mat-icon>arrow_back</mat-icon> Filter
         </button>
     </div>
-    <div *ngFor="let filter of BLOCK_FILTERS">
-        <block-filter [data]="filter" (selected)="selection($event)"></block-filter>
+    <div *ngFor="let filter of BLOCK_FILTERS; let i = index">
+        <block-filter [data]="filter" (selected)="selection($event)" [colour]="colours[i]"></block-filter>
     </div>
 </ng-template>

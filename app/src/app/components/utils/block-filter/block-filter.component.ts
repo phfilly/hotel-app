@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
-import { BlockSelectFilter } from "../shared/filters";
+import { BlockSelectFilter } from "../../filter-container/shared/filterModels";
 
 @Component({
   selector: "block-filter",
@@ -11,6 +11,8 @@ export class BlockFilterComponent {
 
   @Input() data: BlockSelectFilter;
 
+  @Input() colour: string;
+
   @Output() selected = new EventEmitter();
 
   constructor() {}
@@ -18,25 +20,23 @@ export class BlockFilterComponent {
   select(index: number, value: string) {
     if (this.data.blockSelect.isMultiSelect) {
       this.multiSelect(value);
+      this.selected.emit({ key: this.data.key, data: this.selections });
     } else {
-      this.lessThanSelect(index, value);
+      this.moreThanSelect(index, value);
+      this.selected.emit({ key: this.data.key, value: value });
     }
-
-    this.selected.emit({ key: this.data.key, data: this.selections });
   }
 
-  multiSelect(value: string) {
+  multiSelect(value: string): void {
     const index = this.selections.indexOf(value);
     if (index === -1) {
       this.selections.push(value);
-    } else if (index) {
-      this.selections.splice(index, 1);
     } else {
-      this.selections.splice(0, 1);
+      this.selections.splice(index, 1);
     }
   }
 
-  lessThanSelect(index: number, value: string) {
+  moreThanSelect(index: number, value: string): void {
     this.selections = this.data.blockSelect.values.filter((value, i) => {
       if (i >= index) {
         return value;

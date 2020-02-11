@@ -1,88 +1,71 @@
-export interface SlideFilter {
-  name: string;
-  unit?: string;
-  icon?: string;
-  key: string;
-  symbol?: string;
-  slider?: SlideProperties;
-}
-
-export interface SlideProperties {
-  min?: number;
-  max?: number;
-  step?: number;
-}
-
-export interface BlockSelectFilter {
-  name: string;
-  key: string;
-  blockSelect: BlockSelect;
-}
-
-export interface BlockSelect {
-  values: string[];
-  isMultiSelect: boolean;
-  symbol: string;
-}
+import { SlideFilter, Filter, BlockSelectFilter } from "./filterModels";
+import { FilterKey } from "./filterEnum";
 
 export const filters: SlideFilter[] = [
   {
     name: "Max Price",
-    unit: "€",
+    unit: {
+      name: "€",
+      isPrefix: true
+    },
     icon: "euro_symbol",
-    key: "CURRENCY",
+    key: FilterKey.CURRENCY,
+    isInverted: false,
+    colour: "#0077FF",
     slider: {
       min: 100,
       step: 50,
-      max: 2000
+      max: 2000,
+      default: 20
     }
   },
   {
     name: "Min Rating",
-    unit: "",
     icon: "insert_emoticon",
-    key: "RATING",
+    key: FilterKey.GUEST_RATING,
+    isInverted: true,
+    colour: "#0077FF",
     slider: {
       min: 1,
       step: 1,
-      max: 10
+      max: 10,
+      default: 9
     }
   },
   {
     name: "Distance from city center",
-    unit: "km",
+    unit: {
+      name: "km",
+      isSuffix: true
+    },
     icon: "near_me",
-    key: "DISTANCE",
+    key: FilterKey.DISTANCE,
+    isInverted: false,
+    colour: "#0077FF",
     slider: {
       min: 1,
       step: 10,
-      max: 500
+      max: 500,
+      default: 10
     }
   }
 ];
 
-export interface Filter {
-  name: string;
-  key: string;
-  values?: string[];
-  symbol?: string;
-}
-
 export const sortBy: Filter[] = [
   {
     name: "Best supplier & price",
-    key: "SUPPLIER_AND_PRICE"
+    key: FilterKey.SUPPLIER_AND_PRICE
   },
   {
     name: "Best location",
-    key: "LOCATION"
+    key: FilterKey.LOCATION
   }
 ];
 
 export const block_filters: BlockSelectFilter[] = [
   {
     name: "Guest Rating",
-    key: "GUEST_RATING",
+    key: FilterKey.GUEST_RATING,
     blockSelect: {
       values: ["Any", "6", "7", "8", "9"],
       isMultiSelect: false,
@@ -91,7 +74,7 @@ export const block_filters: BlockSelectFilter[] = [
   },
   {
     name: "Star Rating",
-    key: "STAR_RATING",
+    key: FilterKey.STAR_RATING,
     blockSelect: {
       values: ["Any", "2", "3", "4", "5"],
       isMultiSelect: true,

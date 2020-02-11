@@ -1,0 +1,17 @@
+<div class="special-price" *ngIf="hotel.pricing.specialPrice > 0">€{{ hotel.pricing.specialPrice }}</div>
+<div class="main-price">€<span>{{ hotel.pricing.price }}</span></div>
+<div class="cancellation-policy" *ngIf="hotel.canCancel">Free cancellation</div>
+
+<div class="best-price">
+    <a href="{{ hotel.vendors[0].link }}" class="best-price-btn" target="_blank">{{ hotel.vendors[0].vendor }} <span>&#8594;</span></a>
+</div>
+
+<div *ngFor="let vendor of hotel.vendors">
+    <div class="vendor-block">
+        <div>{{ vendor.vendor }}</div>
+        <div>€{{ vendor.price }}</div>
+    </div>
+</div>
+<div class="show-details">
+    <a href="">Show details <span class="chevron bottom"></span></a>
+</div>

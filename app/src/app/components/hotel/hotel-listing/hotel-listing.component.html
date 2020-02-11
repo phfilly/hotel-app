@@ -7,43 +7,9 @@
         </button>
     </div>
     <div class="hotel-details">
-        <div>
-            <h2>{{ hotel.name }}</h2>
-            <div class="star-container">
-                <div *ngFor="let star of [0,1,2,3,4]; let i = index">
-                    <mat-icon class="star" [ngClass]="{ 'outline': hotel.starRating > i }">star_border</mat-icon>
-                </div>
-            </div>
-            <div class="location">
-                <mat-icon>near_me</mat-icon> {{ hotel.location }} &mdash; {{ hotel.city }}
-            </div>
-            <div class="sentiment">
-                <mat-icon class="{{ rating.class }}">insert_emoticon</mat-icon> {{ rating.text }} {{ hotel.rating }}
-            </div>
-            <div class="perk-container">
-                <div *ngFor="let perk of hotel.perks" class="perk">
-                    {{ perk }}
-                </div>
-            </div>
-        </div>
+        <hotel-detail [hotel]="hotel"></hotel-detail>
     </div>
     <div class="pricing-block" [ngClass]="{ 'web-pricing-block': !isMobile }">
-        <div class="special-price" *ngIf="hotel.pricing.specialPrice > 0">€{{ hotel.pricing.specialPrice }}</div>
-        <div class="main-price">€<span>{{ hotel.pricing.price }}</span></div>
-        <div class="cancellation-policy" *ngIf="hotel.canCancel">Free cancellation</div>
-
-        <div class="best-price">
-            <a href="{{ hotel.vendors[0].link }}" class="best-price-btn" target="_blank">{{ hotel.vendors[0].vendor }} <span>&#8594;</span></a>
-        </div>
-
-        <div *ngFor="let vendor of hotel.vendors">
-            <div class="vendor-block">
-                <div>{{ vendor.vendor }}</div>
-                <div>€{{ vendor.price }}</div>
-            </div>
-        </div>
-        <div class="show-details">
-            <a href="">Show details <span class="chevron bottom"></span></a>
-        </div>
+        <hotel-pricing [hotel]="hotel"></hotel-pricing>
     </div>
 </div>

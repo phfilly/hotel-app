@@ -6,6 +6,13 @@
     background-size: contain;
     background-position: 50% 60%;
     background-size: 85%;
+    position: relative;
+
+    .value {
+        position: absolute;
+        margin-top: -12px;
+        font-weight: 500;
+    }
 }
 
 mat-icon {
@@ -25,4 +32,17 @@ h4 {
 ::ng-deep .mat-slider-thumb {
     background-color: #fff !important;
     border: 3px solid $primary-blue !important;
+}
+
+::ng-deep .mat-accent .mat-slider-track-fill {
+    background-color: $primary-blue;
+}
+
+$rainbow-colors: $primary-green, $primary-yellow;
+@for $i from 1 through 10 {
+    #colourProgress-#{$i} ::ng-deep .mat-accent .mat-slider-track-fill
+    { 
+        background: linear-gradient(to left, $rainbow-colors);
+        background-position: ($i * 20%) 0;
+    }
 }

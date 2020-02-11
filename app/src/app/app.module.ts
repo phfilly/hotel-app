@@ -11,11 +11,13 @@ import { HotelListingComponent } from "./components/hotel/hotel-listing/hotel-li
 import { MatSliderModule } from "@angular/material/slider";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
-import { SlideFilterComponent } from "./components/filter-container/slide-filter/filter.component";
+import { SlideFilterComponent } from "./components/utils/slide-filter/filter.component";
 import { MatSelectModule } from "@angular/material/select";
 import { MatSidenavModule } from "@angular/material/sidenav";
-import { BlockFilterComponent } from "./components/filter-container/block-filter/block-filter.component";
+import { BlockFilterComponent } from "./components/utils/block-filter/block-filter.component";
 import { HotelSideNavigationComponent } from "./components/hotel/side-nav/side-nav.component";
+import { HotelPricingComponent } from "./components/hotel/hotel-pricing/hotel-pricing.component";
+import { HotelDetailComponent } from "./components/hotel/hotel-detail/hotel-detail.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { HotelSideNavigationComponent } from "./components/hotel/side-nav/side-n
     HotelListingComponent,
     HotelSideNavigationComponent,
     SlideFilterComponent,
-    BlockFilterComponent
+    BlockFilterComponent,
+    HotelPricingComponent,
+    HotelDetailComponent
   ],
   imports: [
     BrowserModule,

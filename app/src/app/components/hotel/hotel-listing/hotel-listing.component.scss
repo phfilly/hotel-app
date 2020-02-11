@@ -19,7 +19,7 @@ div.hotel-listing.mobile-hotel-listing {
     height: 100%;
     background-repeat: no-repeat;
     max-height: 300px;
-    height: 254px;
+    height: 281px;
     max-width: 380px;
 
     .great-offer-ribbon {
@@ -82,70 +82,6 @@ div.hotel-listing.mobile-hotel-listing {
 .hotel-details {
     width: 100%;
     padding: 20px;
-
-    h2 {
-        margin-bottom: 0;
-    }
-
-    .location {
-        color: $primary-blue;
-        padding: 10px 0px;
-
-        mat-icon {
-            position: relative;
-            top: 5px;
-        }
-    }
-
-    .sentiment {
-        padding-bottom: 15px;
-        font-weight: 500;
-        margin-top: -10px;
-
-        mat-icon {
-            position: relative;
-            top: 5px;
-        }
-
-        .bad {
-            color: red;
-        }
-
-        .average {
-            color: #dada00;
-        }
-
-        .great {
-            color: green;
-        }
-    }
-
-    .star-container {
-        display: flex;
-        justify-content: space-between;
-        max-width: 120px;
-
-        .star {
-            color: $light-grey;
-        }
-
-        .outline {
-            color: $primary-orange;
-        }
-    }
-
-    .perk-container {
-        display: flex;
-        justify-content: left;
-        flex-wrap: wrap;
-        
-        .perk {
-            background-color: $light-grey;
-            margin: 2px;
-            border-radius: 15px;
-            padding: 5px 15px;
-        }
-    }
 }
 
 .web-pricing-block {
@@ -160,73 +96,5 @@ div.hotel-listing.mobile-hotel-listing {
     min-width: 250px;
     position: relative;
     height: 100%;
-
-    .special-price {
-        color: $primary-orange;
-        text-decoration: line-through;
-        font-size: 18px;
-    }
-    
-    .cancellation-policy {
-        color: green;
-        font-size: 14px;
-        padding: 0px;
-    }
-    
-    .main-price {
-        font-size: 36px;
-        padding: 8px 0px;
-
-        span {
-            font-weight: bold;
-        }
-    }
-
-    .best-price {
-        padding: 10px 0px;
-    }
-
-    .best-price-btn {
-        background-color: $primary-orange;
-        padding: 10px 2px;
-        border-radius: 25px;
-        color: #fff;
-        text-decoration: none;
-        text-transform: capitalize;
-        width: 100%;
-        display: block;
-        opacity: 1.0;
-
-        span {
-            font-size: 20px;
-            padding: 0px 5px;
-            color: #fff;
-        }
-
-        &:hover {
-            opacity: 0.8;
-        }
-    }
-
-    .vendor-block {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 2px 0px;
-
-        div {
-            font-size: 14px;
-        }
-    }
-
-    .show-details {
-        font-weight: bold;
-        font-size: 14px;
-        padding: 10px 0px;
-
-        a {
-            text-decoration: none;
-        }
-    }
 }
 

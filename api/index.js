@@ -15,8 +15,8 @@ app.listen(3000, () => {
 app.get("/hotels", (req, res, next) => {
     res.json([
     {
-        name: "ITC Hotel",
-        image: "https://i.travelapi.com/hotels/2000000/1850000/1842100/1842001/55b66b48_w.jpg",
+        name: "Grand Hotel Amrâth Amsterdam",
+        image: "https://i.travelapi.com/hotels/1000000/10000/2700/2603/49c2e231_w.jpg",
         location: "Grachtengordel-Zuid",
         city: "Amsterdam",
         country: "The Netherlands",

@@ -5,7 +5,7 @@
             <div class="hotel-row">
                 <filter-container [isMobile]="isMobile"></filter-container>
             </div>
-            <div *ngFor="let hotel of hotels" class="hotel-row">
+            <div *ngFor="let hotel of hotels | slice : 0 : 5" class="hotel-row">
                 <hotel-listing [hotel]="hotel" [isMobile]="isMobile"></hotel-listing>
             </div>
         </div>

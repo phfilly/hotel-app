@@ -1,0 +1,17 @@
+<div class="slider">
+    <h4>
+        <mat-icon>{{ filter.icon }}</mat-icon> {{ filter.name }}
+    </h4>
+    <div *ngIf="value" class="value">{{ showValue() }}</div>
+    <div id="{{ 'colourProgress-' + value }}">
+        <mat-slider thumbLabel
+            class="mat-slider"
+            [min]="filter.slider.min"
+            [max]="filter.slider.max"
+            [step]="filter.slider.step"
+            value="filter.slider.default"
+            (change)="updateValue($event)"
+            [invert]="filter.isInverted">
+        </mat-slider>
+    </div>
+</div>
