@@ -8,6 +8,7 @@ import { Hotels } from "src/app/models/hotels";
 })
 export class HotelListingComponent implements OnInit {
   public rating = { text: "", class: "" };
+  isFavourite = false;
 
   @Input() hotel: Hotels;
 
@@ -17,6 +18,10 @@ export class HotelListingComponent implements OnInit {
 
   ngOnInit(): void {
     this.printRatingText();
+  }
+
+  toggleFavourite() {
+    this.isFavourite = !this.isFavourite;
   }
 
   printRatingText(): void {

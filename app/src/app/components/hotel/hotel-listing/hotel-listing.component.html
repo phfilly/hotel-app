@@ -1,8 +1,9 @@
 <div class="hotel-listing" [ngClass]="{ 'mobile-hotel-listing': isMobile }">
     <div class="hotel-image" [ngStyle]="{'background-image': 'url(' + hotel.image + ')'}">
         <span class="great-offer-ribbon" *ngIf="hotel.isSpecial">GREAT OFFER</span>
-        <button type="button" mat-icon-button class="favourite">
-            <mat-icon>favorite_border</mat-icon>
+        <button type="button" mat-icon-button class="favourite" (click)="toggleFavourite()">
+            <mat-icon *ngIf="!isFavourite">favorite_border</mat-icon>
+            <mat-icon *ngIf="isFavourite">favorite</mat-icon>
         </button>
     </div>
     <div class="hotel-details">
@@ -17,7 +18,7 @@
                 <mat-icon>near_me</mat-icon> {{ hotel.location }} &mdash; {{ hotel.city }}
             </div>
             <div class="sentiment">
-                <mat-icon class="{{ rating.class }}">insert_emoticon</mat-icon> {{ rating.text }}
+                <mat-icon class="{{ rating.class }}">insert_emoticon</mat-icon> {{ rating.text }} {{ hotel.rating }}
             </div>
             <div class="perk-container">
                 <div *ngFor="let perk of hotel.perks" class="perk">

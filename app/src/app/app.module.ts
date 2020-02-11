@@ -10,6 +10,7 @@ import { HotelContainerComponent } from "./components/hotel/hotel-container/hote
 import { HotelListingComponent } from "./components/hotel/hotel-listing/hotel-listing.component";
 import { MatSliderModule } from "@angular/material/slider";
 import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
 import { SlideFilterComponent } from "./components/filter-container/slide-filter/filter.component";
 import { MatSelectModule } from "@angular/material/select";
 import { MatSidenavModule } from "@angular/material/sidenav";
@@ -34,7 +35,8 @@ import { HotelSideNavigationComponent } from "./components/hotel/side-nav/side-n
     MatSliderModule,
     MatIconModule,
     MatSelectModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

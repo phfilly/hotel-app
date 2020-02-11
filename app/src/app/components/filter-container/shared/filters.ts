@@ -1,40 +1,63 @@
-export interface SlideFilter {
+export interface MultiFilter {
   name: string;
-  unit: string;
-  icon: string;
+  unit?: string;
+  icon?: string;
   key: string;
-  min: number;
-  max: number;
-  step: number;
+  symbol?: string;
+  slider?: SlideProperties;
 }
 
-export const slide_filters: SlideFilter[] = [
+export interface SlideProperties {
+  min?: number;
+  max?: number;
+  step?: number;
+}
+
+export interface BlockSelectFilter {
+  name: string;
+  key: string;
+  blockSelect: BlockSelect;
+}
+
+export interface BlockSelect {
+  values: string[];
+  isMultiSelect: boolean;
+  symbol: string;
+}
+
+export const filters: MultiFilter[] = [
   {
     name: "Max Price",
     unit: "€",
     icon: "euro_symbol",
     key: "CURRENCY",
-    min: 100,
-    step: 50,
-    max: 2000
+    slider: {
+      min: 100,
+      step: 50,
+      max: 2000
+    }
   },
   {
     name: "Min Rating",
     unit: "",
     icon: "insert_emoticon",
     key: "RATING",
-    min: 1,
-    step: 1,
-    max: 10
+    slider: {
+      min: 1,
+      step: 1,
+      max: 10
+    }
   },
   {
     name: "Distance from city center",
     unit: "km",
     icon: "near_me",
     key: "DISTANCE",
-    min: 1,
-    step: 10,
-    max: 500
+    slider: {
+      min: 1,
+      step: 10,
+      max: 500
+    }
   }
 ];
 
@@ -56,17 +79,23 @@ export const sortBy: Filter[] = [
   }
 ];
 
-export const block_filters: Filter[] = [
+export const block_filters: BlockSelectFilter[] = [
   {
     name: "Guest Rating",
     key: "GUEST_RATING",
-    values: ["Any", "6", "7", "8", "9"],
-    symbol: "+"
+    blockSelect: {
+      values: ["Any", "6", "7", "8", "9"],
+      isMultiSelect: false,
+      symbol: "+"
+    }
   },
   {
     name: "Star Rating",
     key: "STAR_RATING",
-    values: ["Any", "2", "3", "4", "5"],
-    symbol: "&#9733;"
+    blockSelect: {
+      values: ["Any", "2", "3", "4", "5"],
+      isMultiSelect: true,
+      symbol: "&#9733;"
+    }
   }
 ];

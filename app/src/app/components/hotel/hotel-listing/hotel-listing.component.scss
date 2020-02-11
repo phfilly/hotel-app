@@ -5,6 +5,7 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: #fff;
+    position: relative;
 }
 
 div.hotel-listing.mobile-hotel-listing {
@@ -18,7 +19,7 @@ div.hotel-listing.mobile-hotel-listing {
     height: 100%;
     background-repeat: no-repeat;
     max-height: 300px;
-    height: 300px;
+    height: 254px;
     max-width: 380px;
 
     .great-offer-ribbon {
@@ -31,7 +32,7 @@ div.hotel-listing.mobile-hotel-listing {
         padding-left: 15px;
         position: absolute;
         left: -8px;
-        top: 20px;
+        top: 9px;
         color: #fff;
 
         &::before {
@@ -42,9 +43,9 @@ div.hotel-listing.mobile-hotel-listing {
         &:before {
             height: 0;
             width: 0;
-            top: -8.5px;
+            top: 29.5px;
             left: 0.1px;
-            border-bottom: 9px solid black;
+            border-top: 9px solid $primary-orange;
             border-left: 9px solid transparent;
         }
 
@@ -67,13 +68,13 @@ div.hotel-listing.mobile-hotel-listing {
     .favourite {
         color: #fff;
         float: right;
-        background: none;
-        border: none;
-        padding: 5px;
+        margin-top: 5px;
         margin-right: 12px;
 
         mat-icon {
             font-size: 38px;
+            height: 28px;
+            width: 35px;
         }
     }
 }
@@ -97,8 +98,9 @@ div.hotel-listing.mobile-hotel-listing {
     }
 
     .sentiment {
-        padding: 10px 0px;
+        padding-bottom: 15px;
         font-weight: 500;
+        margin-top: -10px;
 
         mat-icon {
             position: relative;
@@ -154,10 +156,10 @@ div.hotel-listing.mobile-hotel-listing {
 .pricing-block {
     text-align: center;
     width: 100%;
-    align-self: center;
     padding: 15px;
     min-width: 250px;
-    margin: auto;
+    position: relative;
+    height: 100%;
 
     .special-price {
         color: $primary-orange;
@@ -173,7 +175,7 @@ div.hotel-listing.mobile-hotel-listing {
     
     .main-price {
         font-size: 36px;
-        padding: 20px 0px;
+        padding: 8px 0px;
 
         span {
             font-weight: bold;

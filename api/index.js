@@ -42,6 +42,11 @@ app.get("/hotels", (req, res, next) => {
                 vendor: 'hotels.com',
                 link: 'http://hotels.com/hotels',
                 price: 150
+            },
+            {
+                vendor: 'agoda.com',
+                link: 'http://agoda.com/hotels',
+                price: 150
             }
         ],
         reviewCount: 3836,
@@ -79,6 +84,11 @@ app.get("/hotels", (req, res, next) => {
                 vendor: 'hotels.com',
                 link: 'http://hotels.com/hotels',
                 price: 150
+            },
+            {
+                vendor: 'agoda.com',
+                link: 'http://agoda.com/hotels',
+                price: 150
             }
         ],
         reviewCount: 3836,
@@ -115,6 +125,11 @@ app.get("/hotels", (req, res, next) => {
             {
                 vendor: 'hotels.com',
                 link: 'http://hotels.com/hotels',
+                price: 150
+            },
+            {
+                vendor: 'agoda.com',
+                link: 'http://agoda.com/hotels',
                 price: 150
             }
         ],

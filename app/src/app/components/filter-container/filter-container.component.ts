@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { sortBy, slide_filters, block_filters } from "./shared/filters";
+import { sortBy, filters, block_filters } from "./shared/filters";
 import { FilterService } from "./shared/filter.service";
-import { MatSliderChange } from "@angular/material/slider";
 
 @Component({
   selector: "filter-container",
@@ -11,7 +10,7 @@ import { MatSliderChange } from "@angular/material/slider";
 })
 export class FilterContainerComponent implements OnInit {
   SORT_BY = sortBy;
-  SLIDE_FILTERS = slide_filters;
+  SLIDE_FILTERS = filters;
   BLOCK_FILTERS = block_filters;
 
   @Input() isMobile: boolean;
