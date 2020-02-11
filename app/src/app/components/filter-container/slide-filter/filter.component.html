@@ -3,9 +3,9 @@
         <mat-icon>{{ filter.icon }}</mat-icon> {{ filter.name }}
     </h4>
     <mat-slider thumbLabel
-        [min]="filter.min"
-        [max]="filter.max"
-        [step]="filter.step"
+        [min]="filter.slider.min"
+        [max]="filter.slider.max"
+        [step]="filter.slider.step"
         value="1.5"
         (change)="updateValue($event)"></mat-slider>
 </div>
