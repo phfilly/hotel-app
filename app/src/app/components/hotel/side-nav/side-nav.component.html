@@ -8,6 +8,8 @@
             <mat-icon>tune</mat-icon> Filter By
         </button>
 
+        <div *ngIf="hotels && !hotels.length" class="hotel-row">Nothing found...</div>
+
         <div *ngFor="let hotel of hotels" class="hotel-row">
             <hotel-listing [hotel]="hotel" [isMobile]="isMobile"></hotel-listing>
         </div>

@@ -4,6 +4,7 @@ export interface Hotels {
   location: string;
   city: string;
   country: string;
+  distanceFromCenter: number;
   pricing: Price;
   vendors: Vendors[];
   perks: string[];

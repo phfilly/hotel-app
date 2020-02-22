@@ -17,8 +17,9 @@
             </mat-form-field>
         </div>
         <div>
-            2380 hotels,
-            <a href="" class="upsell-deals">56 with great deals</a>
+            {{ (apiService.$hotels | async)?.length ? (apiService.$hotels | async)?.length : 0 }} hotels,
+            <a href="#" class="upsell-deals">
+                {{ (apiService.$hotels | async)?.length }} with great deals</a>
         </div>
     </div>
 </div>

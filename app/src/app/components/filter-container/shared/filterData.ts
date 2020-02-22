@@ -13,9 +13,9 @@ export const filters: SlideFilter[] = [
     isInverted: false,
     colour: "#0077FF",
     slider: {
-      min: 100,
-      step: 50,
-      max: 2000,
+      min: 0,
+      step: 10,
+      max: 500,
       default: 20
     }
   },
@@ -44,8 +44,8 @@ export const filters: SlideFilter[] = [
     colour: "#0077FF",
     slider: {
       min: 1,
-      step: 10,
-      max: 500,
+      step: 5,
+      max: 450,
       default: 10
     }
   }

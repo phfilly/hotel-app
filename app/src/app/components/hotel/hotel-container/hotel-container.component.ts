@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { ApiService } from "src/app/shared/api.service";
 import { Hotels } from "src/app/models/hotels";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
@@ -9,7 +9,7 @@ import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
   styleUrls: ["./hotel-container.component.scss"],
   providers: [ApiService]
 })
-export class HotelContainerComponent implements OnInit {
+export class HotelContainerComponent {
   public hotels: Hotels[];
   isLoading = true;
   isMobile = false;
@@ -20,15 +20,13 @@ export class HotelContainerComponent implements OnInit {
     private breakpointObserver: BreakpointObserver
   ) {
     this.configureDevice();
-  }
-
-  ngOnInit(): void {
+    this.apiService.getData();
     this.getData();
   }
 
   getData() {
-    this.apiService.getData().subscribe((data: Hotels[]) => {
-      this.hotels = [...data];
+    this.apiService.$hotels.subscribe((hotels: Hotels[]) => {
+      this.hotels = [...hotels];
       this.isLoading = false;
     });
   }
