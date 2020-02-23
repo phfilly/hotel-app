@@ -13,7 +13,6 @@ export class HotelContainerComponent {
   public hotels: Hotels[];
   isLoading = true;
   isMobile = false;
-  showFiller = false;
 
   constructor(
     private apiService: ApiService,
@@ -21,11 +20,18 @@ export class HotelContainerComponent {
   ) {
     this.configureDevice();
     this.apiService.getData();
+    this.getLoadingState();
     this.getData();
   }
 
+  getLoadingState() {
+    this.apiService
+      .getLoadingState()
+      .subscribe((state: boolean) => (this.isLoading = state));
+  }
+
   getData() {
-    this.apiService.$hotels.subscribe((hotels: Hotels[]) => {
+    this.apiService.getHotels().subscribe((hotels: Hotels[]) => {
       this.hotels = [...hotels];
       this.isLoading = false;
     });

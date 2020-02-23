@@ -1,16 +1,19 @@
 <div class="hotel-container">
-    <div *ngIf="isLoading; else showHotels" class="hotel-row">Loading...</div>
-    <div *ngIf="!isLoading && !hotels.length && !isMobile" class="hotel-row">Nothing found...</div>
-    <ng-template #showHotels>
         <div *ngIf="!isMobile">
             <div class="hotel-row">
                 <filter-container [isMobile]="isMobile"></filter-container>
+                <div>   
+                    <div *ngIf="isLoading" class="info-text">Loading...</div>
+                    <div *ngIf="!isLoading && !hotels.length && !isMobile" class="info-text">Nothing found...</div>
+                </div>
             </div>
-            <div *ngFor="let hotel of hotels | slice : 0 : 5" class="hotel-row">
-                <hotel-listing [hotel]="hotel" [isMobile]="isMobile"></hotel-listing>
+
+            <div>
+                <div *ngFor="let hotel of hotels | slice : 0 : 5" class="hotel-row">
+                    <hotel-listing [hotel]="hotel" [isMobile]="isMobile"></hotel-listing>
+                </div>
             </div>
         </div>
-    </ng-template>
 
     <div *ngIf="isMobile">
         <hotel-side-nav [hotels]="hotels" [isMobile]="isMobile"></hotel-side-nav>

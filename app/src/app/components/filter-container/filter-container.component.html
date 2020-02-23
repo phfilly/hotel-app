@@ -17,9 +17,9 @@
             </mat-form-field>
         </div>
         <div>
-            {{ (apiService.$hotels | async)?.length ? (apiService.$hotels | async)?.length : 0 }} hotels,
+            {{ (apiService.getHotels().source | async)?.length }} hotels,
             <a href="#" class="upsell-deals">
-                {{ (apiService.$hotels | async)?.length }} with great deals</a>
+                {{ (apiService.getHotels().source | async)?.length }} with great deals</a>
         </div>
     </div>
 </div>
